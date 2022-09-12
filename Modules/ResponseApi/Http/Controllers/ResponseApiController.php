@@ -55,7 +55,7 @@ class ResponseApiController extends Controller
                 $output = new  XmlParser();
                 break;
             default:
-                dd('error');
+                throw new ApiTypeException('type not defined');
 
         }
         return $output->single($input); // parse data
