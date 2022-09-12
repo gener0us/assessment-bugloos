@@ -10,6 +10,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Http;
 use Modules\ResponseApi\Contracts\OutputInterface;
 use Modules\ResponseApi\DTO\ResponseApiDto;
+use Modules\ResponseApi\Exceptions\ApiTypeException;
 use Modules\ResponseApi\Services\JsonParser;
 use Modules\ResponseApi\Services\RepresentApiService;
 use Modules\ResponseApi\Services\RepresentSingleApiService;
@@ -32,11 +33,15 @@ class ResponseApiController extends Controller
 
     public function single(RepresentSingleApiService $service, Request $request): OutputInterface
     {
+        try {
             $type = $request->get('type') ?? 'json'; // type data
             $body = Http::get($this->apiUrlSingle)->body(); // get data from api
             $dto = ResponseApiDto::fromArray($this->parse($body, $type)); // check data type and mapping data
             $result = $service->handle($dto); // save data to DB
             return ResponseApiResource::make($result); // response
+        } catch (Throwable $e) {
+            throw new ApiTypeException('unexpected error happened');
+        }
     }
 
     public function parse($input, $type = 'json')
