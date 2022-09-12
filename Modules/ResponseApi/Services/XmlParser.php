@@ -7,6 +7,10 @@ use Modules\ResponseApi\Contracts\ApiParserInterface;
 class XmlParser implements ApiParserInterface
 {
     //xml parser
+    /**
+     * @param $data
+     * @return array
+     */
     public function single($data)
     {
         $xml = simplexml_load_string($data);

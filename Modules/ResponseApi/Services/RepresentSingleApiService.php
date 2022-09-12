@@ -8,6 +8,10 @@ use Modules\ResponseApi\DTO\ResponseApiDto;
 
 class RepresentSingleApiService
 {
+    /**
+     * @param ResponseApiDto $dto
+     * @return User
+     */
     public function handle(ResponseApiDto $dto): User
     {
         // create or update in DB and return User

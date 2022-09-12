@@ -12,6 +12,10 @@ class ResponseApiDto
     {
     }
 
+    /**
+     * @param array $data
+     * @return static
+     */
     public static function fromArray(array $data): self
     {
         //mapping data
@@ -22,16 +26,25 @@ class ResponseApiDto
         );
     }
 
+    /**
+     * @return string
+     */
     public function getKey(): string
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @return string|null
+     */
     public function getEmail(): ?string
     {
         return $this->email;
