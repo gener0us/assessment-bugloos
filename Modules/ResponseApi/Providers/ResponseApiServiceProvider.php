@@ -53,6 +53,12 @@ class ResponseApiServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
         );
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/response_api.php',
+            'response_api'
+            // presentation config file
+        );
+        // Merge configs
     }
 
     /**
