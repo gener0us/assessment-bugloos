@@ -12,5 +12,5 @@
 */
 
 Route::prefix('responseapi')->group(function() {
-    Route::get('/', 'ResponseApiController@index');
+    Route::get('/single', 'ResponseApiController@single');
 });
