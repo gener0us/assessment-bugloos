@@ -16,6 +16,6 @@ class ApiTypeException extends Exception implements OutputInterface
 
     public function toArray($data)
     {
-        return (object)['message' => $data, 'extra' => $this->message];
+        return (object)['data'=>['message' => $data, 'extra' => $this->message]];
     }
 }
