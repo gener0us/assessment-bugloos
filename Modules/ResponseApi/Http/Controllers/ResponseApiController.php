@@ -2,78 +2,44 @@
 
 namespace Modules\ResponseApi\Http\Controllers;
 
+
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\ResponseApi\Services\JsonParser;
+use Modules\ResponseApi\Services\XmlParser;
 
 class ResponseApiController extends Controller
 {
+    protected $apiUrlSingle;
+
     /**
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function __construct()
     {
-        return view('responseapi::index');
+        $this->apiUrlSingle = config('response_api.single_user.url'); // api url in config
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
+    public function single()
     {
-        return view('responseapi::create');
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
+    public function parse($input, $type = 'json')
     {
-        //
-    }
+        //check data type
+        switch ($type){
+            case 'json':
+                $output = new  JsonParser();
+                break;
+            case 'xml':
+                $output = new  XmlParser();
+                break;
+            default:
+                dd('error');
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('responseapi::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('responseapi::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
+        }
+        return $output->single($input); // parse data
     }
 }
