@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "8c41a63a-5c72-4026-a456-ea3d187c8b7d",
+		"name": "assessment-bugloos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22763966"
+	},
+	"item": [
+		{
+			"name": "response_api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/responseapi/single?type=json",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"responseapi",
+						"single"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
