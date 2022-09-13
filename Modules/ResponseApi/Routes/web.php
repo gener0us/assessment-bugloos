@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('responseapi')->group(function() {
+Route::prefix('responseapi')->group(function () {
     Route::get('/single', 'ResponseApiController@single')->name('team-api');
 });

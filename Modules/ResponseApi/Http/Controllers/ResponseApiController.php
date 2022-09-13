@@ -2,7 +2,6 @@
 
 namespace Modules\ResponseApi\Http\Controllers;
 
-
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -47,7 +46,7 @@ class ResponseApiController extends Controller
     public function parse($input, $type = 'json')
     {
         //check data type
-        switch ($type){
+        switch ($type) {
             case 'json':
                 $output = new  JsonParser();
                 break;
@@ -56,7 +55,6 @@ class ResponseApiController extends Controller
                 break;
             default:
                 throw new ApiTypeException('type not defined');
-
         }
         return $output->single($input); // parse data
     }

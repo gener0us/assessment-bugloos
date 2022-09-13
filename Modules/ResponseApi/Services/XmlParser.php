@@ -15,6 +15,6 @@ class XmlParser implements ApiParserInterface
     {
         $xml = simplexml_load_string($data);
         $toArray = json_decode(json_encode($xml->children()));
-        return (array) $toArray->data->item;
+        return (array)$toArray->data->item;
     }
 }

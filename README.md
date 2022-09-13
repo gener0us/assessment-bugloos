@@ -18,7 +18,7 @@ git clone git@github.com:gener0us/assessment-bugloos.git
 2. Switch to the repo folder
 
 ```bash
-cd laravel-realworld-example-app
+cd ./assessment-bugloos
 ```
 3. Install all the dependencies using composer
 
@@ -28,8 +28,13 @@ composer install
 ```
 4. Copy the example env file and make the required configuration changes in the .env file
 
-
+- windows:
 ```bash
+acp .env.example .env
+```
+- Linux and macOs:
+```bash
+
 cp .env.example .env
 ```
 5. Run the database migrations (Set the database connection in .env before migrating)
@@ -37,14 +42,21 @@ cp .env.example .env
 ```bash
 php artisan migrate
 ```
-6. Start the local development server
+6. generate application key via:
+
+```bash
+php artisan key:generate
+```
+
+7. Start the local development server
 
 ```bash
 php artisan serve
 ```
 You can now access the server at http://127.0.0.1:8000
 
-7. For change url api just change variable in .env
+## Note:
+For change url api just change variable in .env
 
 ```bash
 RESPONSE_API_SINGLE_URL="example.com"
@@ -52,7 +64,7 @@ RESPONSE_API_SINGLE_URL="example.com"
 and run this command:
 
 ```bash
-php artisan config:clear
+php artisan config:cache
 ```
 ## Authors
 

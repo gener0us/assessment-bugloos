@@ -1,9 +1,9 @@
 <?php
 
 namespace Modules\ResponseApi\Contracts;
+
 interface OutputInterface
 {
-
     /**
      * @param $data
      * @return mixed
