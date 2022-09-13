@@ -12,5 +12,5 @@
 */
 
 Route::prefix('responseapi')->group(function() {
-    Route::get('/single', 'ResponseApiController@single');
+    Route::get('/single', 'ResponseApiController@single')->name('team-api');
 });
