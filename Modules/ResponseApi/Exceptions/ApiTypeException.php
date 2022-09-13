@@ -9,6 +9,7 @@ class ApiTypeException extends Exception implements OutputInterface
 {
     // type data error handling
     public $message;
+
     public function __construct(string $message = "")
     {
         $this->message = $message;
@@ -20,6 +21,6 @@ class ApiTypeException extends Exception implements OutputInterface
      */
     public function toArray($data)
     {
-        return (object)['data'=>['message' => $data, 'extra' => $this->message]];
+        return (object)['data' => ['message' => $data, 'extra' => $this->message]];
     }
 }

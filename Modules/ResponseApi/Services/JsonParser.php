@@ -13,6 +13,6 @@ class JsonParser implements ApiParserInterface
      */
     public function single($data)
     {
-       return (array) json_decode($data)->data[0];
+        return (array)json_decode($data)->data[0];
     }
 }

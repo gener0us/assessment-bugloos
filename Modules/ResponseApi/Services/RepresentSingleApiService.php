@@ -17,11 +17,12 @@ class RepresentSingleApiService
         // create or update in DB and return User
         $user = User::updateOrCreate(
             [
-                'email' => $dto->getEmail(),]
-            , [
+                'email' => $dto->getEmail(),],
+            [
             'name' => $dto->getName(),
             'password' => Hash::make($dto->getKey())
-        ]);
+            ]
+        );
         return $user;
     }
 }

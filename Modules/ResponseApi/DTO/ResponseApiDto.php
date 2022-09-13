@@ -6,10 +6,9 @@ class ResponseApiDto
 {
     private function __construct(
         private ?string $name,
-        private string  $id,
+        private string $id,
         private ?string $email
-    )
-    {
+    ) {
     }
 
     /**
@@ -49,5 +48,4 @@ class ResponseApiDto
     {
         return $this->email;
     }
-
 }
