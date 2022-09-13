@@ -30,7 +30,7 @@ composer install
 
 - windows:
 ```bash
-acp .env.example .env
+scp .env.example .env
 ```
 - Linux and macOs:
 ```bash
