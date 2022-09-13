@@ -1,0 +1,13 @@
+{
+    "name": "ResponseApi",
+    "alias": "responseapi",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ResponseApi\\Providers\\ResponseApiServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
