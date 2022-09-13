@@ -13,7 +13,7 @@ The purpose of this test is to design a code that receives the output from a API
 1. Install assessment-bugloos with git:
 
 ```bash
-git clone git@github.com:gener0us/assessment-bugloos.git
+git clone https://github.com/gener0us/assessment-bugloos.git
 ```
 2. Switch to the repo folder
 
